@@ -86,6 +86,9 @@ function main(index) {
             document.getElementById('game-over').style.height = '100%';
             document.getElementById('game-over').style.opacity = 1;
             document.getElementById('game-over').style.transform = 'translateY(0px)';
+            document.getElementById('game-over').onclick = function(){
+                window.location.reload();
+            }
         } else {
             success.style.display = 'none';
             danger.style.display = 'none';
