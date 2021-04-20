@@ -15,6 +15,7 @@ form {
   margin: 10% auto;
   position: relative;
   overflow: hidden;
+  border-radius: 5px;
 }
 @media (max-width: 767px) {
   form {
@@ -56,6 +57,7 @@ select {
   font-weight: 700;
   text-align: center;
   transition: 0.4s;
+  height: 0;
   transform: translateY(-100px);
   opacity: 0;
 }

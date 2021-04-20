@@ -79,16 +79,11 @@ function main(index) {
     function thisFalse(){
         if ((errorNum - 9) == levelNum) {
             let form = document.getElementById('form').children;
-            // console.log(form);
-            // form.forEach((value,index) => {
-            //     console.log(value);
-            //     value.style.display = 'none';
-            // });
             for (let i=0; form.length > i; i++){
-                // console.log(form[i]);
                 form[i].style.display = 'none';
             }
             document.getElementById('game-over').style.display = 'block';
+            document.getElementById('game-over').style.height = '100%';
             document.getElementById('game-over').style.opacity = 1;
             document.getElementById('game-over').style.transform = 'translateY(0px)';
         } else {
