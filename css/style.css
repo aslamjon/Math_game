@@ -68,3 +68,8 @@ select {
 .block {
   display: block;
 }
+#misol{
+  font-size: 36px;
+  text-align: center;
+  font-weight: 700;
+}
