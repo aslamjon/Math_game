@@ -56,41 +56,73 @@ function main(index) {
     let massage = document.getElementById('massage');
     let success = document.getElementById('p1');
     let danger = document.getElementById('p2');
-    success.style.display = 'none';
-    danger.style.display = 'none';
+    let send = document.getElementById('send');
+
     let level = document.getElementById('level');
     let levelNum = level.innerHTML;
     levelNum *= 1;
 
+    let error = document.getElementById('error');
+    let errorNum = error.innerHTML;
+    errorNum *= 1;
+
     
     function thisTrue(){
+        success.style.display = 'none';
+        danger.style.display = 'none';
         success.style.display='block';
         levelNum += 1;
         level.innerHTML = levelNum;
+        send.setAttribute('disabled','true');
+        document.getElementById('btn').removeAttribute('disabled');
     }
-   
+    function thisFalse(){
+        if ((errorNum - 9) == levelNum) {
+            let form = document.getElementById('form').children;
+            // console.log(form);
+            // form.forEach((value,index) => {
+            //     console.log(value);
+            //     value.style.display = 'none';
+            // });
+            for (let i=0; form.length > i; i++){
+                // console.log(form[i]);
+                form[i].style.display = 'none';
+            }
+            document.getElementById('game-over').style.display = 'block';
+            document.getElementById('game-over').style.opacity = 1;
+            document.getElementById('game-over').style.transform = 'translateY(0px)';
+        } else {
+            success.style.display = 'none';
+            danger.style.display = 'none';
+            danger.style.display = 'block';
+            errorNum += 1;
+            error.innerHTML = errorNum;
+            document.getElementById('btn').setAttribute('disabled','true');
+        }
+    }
+
     if (selected == 0){
         let result1 = Math.floor(Math.random() * 11);
         let result2 = Math.floor(Math.random() * 11);
         if (amal == '+') {
             misol.innerHTML = '' + result1 + ' '+ amal + ' ' + result2;
             document.getElementById('send').onclick = function(){
-                (javob.value == result1+result2) ? thisTrue() : danger.style.display='block';
+                (javob.value == result1+result2) ? thisTrue() : thisFalse();
             }
         } else if (amal == '-') {
             misol.innerHTML = '' + result1 + ' '+ amal + ' ' + result2;
             document.getElementById('send').onclick = function(){
-                (javob.value == result1-result2) ? thisTrue() : danger.style.display='block';
+                (javob.value == result1-result2) ? thisTrue() : thisFalse();
             }
         } else if (amal == '*') {
             misol.innerHTML = '' + result1 + ' '+ amal + ' ' + result2;
             document.getElementById('send').onclick = function(){
-                (javob.value == result1*result2) ? thisTrue() : danger.style.display='block';
+                (javob.value == result1*result2) ? thisTrue() : thisFalse();
             }
         } else if (amal == '/') {
             misol.innerHTML = '' + result1 + ' '+ amal + ' ' + result2;
             document.getElementById('send').onclick = function(){
-                (javob.value == result1/result2) ? thisTrue() : danger.style.display='block';
+                (javob.value == result1/result2) ? thisTrue() : thisFalse();
             }
         }
     }
@@ -101,22 +133,22 @@ function main(index) {
         if (amal == '+') {
             misol.innerHTML = '' + result1 + ' '+ amal + ' ' + result2;
             document.getElementById('send').onclick = function(){
-                (javob.value == result1+result2) ? thisTrue() : danger.style.display='block';
+                (javob.value == result1+result2) ? thisTrue() : thisFalse();
             }
         } else if (amal == '-') {
             misol.innerHTML = '' + result1 + ' '+ amal + ' ' + result2;
             document.getElementById('send').onclick = function(){
-                (javob.value == result1-result2) ? thisTrue() : danger.style.display='block';
+                (javob.value == result1-result2) ? thisTrue() : thisFalse();
             }
         } else if (amal == '*') {
             misol.innerHTML = '' + result1 + ' '+ amal + ' ' + result2;
             document.getElementById('send').onclick = function(){
-                (javob.value == result1*result2) ? thisTrue() : danger.style.display='block';
+                (javob.value == result1*result2) ? thisTrue() : thisFalse();
             }
         } else if (amal == '/') {
             misol.innerHTML = '' + result1 + ' '+ amal + ' ' + result2;
             document.getElementById('send').onclick = function(){
-                (javob.value == result1/result2) ? thisTrue() : danger.style.display='block';
+                (javob.value == result1/result2) ? thisTrue() : thisFalse();
             }
         }
     }
@@ -126,22 +158,22 @@ function main(index) {
         if (amal == '+') {
             misol.innerHTML = '' + result1 + ' '+ amal + ' ' + result2;
             document.getElementById('send').onclick = function(){
-                (javob.value == result1+result2) ? thisTrue() : danger.style.display='block';
+                (javob.value == result1+result2) ? thisTrue() : thisFalse();
             }
         } else if (amal == '-') {
             misol.innerHTML = '' + result1 + ' '+ amal + ' ' + result2;
             document.getElementById('send').onclick = function(){
-                (javob.value == result1-result2) ? thisTrue() : danger.style.display='block';
+                (javob.value == result1-result2) ? thisTrue() : thisFalse();
             }
         } else if (amal == '*') {
             misol.innerHTML = '' + result1 + ' '+ amal + ' ' + result2;
             document.getElementById('send').onclick = function(){
-                (javob.value == result1*result2) ? thisTrue() : danger.style.display='block';
+                (javob.value == result1*result2) ? thisTrue() : thisFalse();
             }
         } else if (amal == '/') {
             misol.innerHTML = '' + result1 + ' '+ amal + ' ' + result2;
             document.getElementById('send').onclick = function(){
-                (javob.value == result1/result2) ? thisTrue() : danger.style.display='block';
+                (javob.value == result1/result2) ? thisTrue() : thisFalse();
             }
         }
     }
@@ -151,22 +183,22 @@ function main(index) {
         if (amal == '+') {
             misol.innerHTML = '' + result1 + ' '+ amal + ' ' + result2;
             document.getElementById('send').onclick = function(){
-                (javob.value == result1+result2) ? thisTrue() : danger.style.display='block';
+                (javob.value == result1+result2) ? thisTrue() : thisFalse();
             }
         } else if (amal == '-') {
             misol.innerHTML = '' + result1 + ' '+ amal + ' ' + result2;
             document.getElementById('send').onclick = function(){
-                (javob.value == result1-result2) ? thisTrue() : danger.style.display='block';
+                (javob.value == result1-result2) ? thisTrue() : thisFalse();
             }
         } else if (amal == '*') {
             misol.innerHTML = '' + result1 + ' '+ amal + ' ' + result2;
             document.getElementById('send').onclick = function(){
-                (javob.value == result1*result2) ? thisTrue() : danger.style.display='block';
+                (javob.value == result1*result2) ? thisTrue() : thisFalse();
             }
         } else if (amal == '/') {
             misol.innerHTML = '' + result1 + ' '+ amal + ' ' + result2;
             document.getElementById('send').onclick = function(){
-                (javob.value == result1/result2) ? thisTrue() : danger.style.display='block';
+                (javob.value == result1/result2) ? thisTrue() : thisFalse();
             }
         }
     }
@@ -176,22 +208,22 @@ function main(index) {
         if (amal == '+') {
             misol.innerHTML = '' + result1 + ' '+ amal + ' ' + result2;
             document.getElementById('send').onclick = function(){
-                (javob.value == result1+result2) ? thisTrue() : danger.style.display='block';
+                (javob.value == result1+result2) ? thisTrue() : thisFalse();
             }
         } else if (amal == '-') {
             misol.innerHTML = '' + result1 + ' '+ amal + ' ' + result2;
             document.getElementById('send').onclick = function(){
-                (javob.value == result1-result2) ? thisTrue() : danger.style.display='block';
+                (javob.value == result1-result2) ? thisTrue() : thisFalse();
             }
         } else if (amal == '*') {
             misol.innerHTML = '' + result1 + ' '+ amal + ' ' + result2;
             document.getElementById('send').onclick = function(){
-                (javob.value == result1*result2) ? thisTrue() : danger.style.display='block';
+                (javob.value == result1*result2) ? thisTrue() : thisFalse();
             }
         } else if (amal == '/') {
             misol.innerHTML = '' + result1 + ' '+ amal + ' ' + result2;
             document.getElementById('send').onclick = function(){
-                (javob.value == result1/result2) ? thisTrue() : danger.style.display='block';
+                (javob.value == result1/result2) ? thisTrue() : thisFalse();
             }
         }
     }
@@ -202,22 +234,22 @@ function main(index) {
         if (amal == '+') {
             misol.innerHTML = '' + result1 + ' '+ amal + ' ' + result2;
             document.getElementById('send').onclick = function(){
-                (javob.value == result1+result2) ? thisTrue() : danger.style.display='block';
+                (javob.value == result1+result2) ? thisTrue() : thisFalse();
             }
         } else if (amal == '-') {
             misol.innerHTML = '' + result1 + ' '+ amal + ' ' + result2;
             document.getElementById('send').onclick = function(){
-                (javob.value == result1-result2) ? thisTrue() : danger.style.display='block';
+                (javob.value == result1-result2) ? thisTrue() : thisFalse();
             }
         } else if (amal == '*') {
             misol.innerHTML = '' + result1 + ' '+ amal + ' ' + result2;
             document.getElementById('send').onclick = function(){
-                (javob.value == result1*result2) ? thisTrue() : danger.style.display='block';
+                (javob.value == result1*result2) ? thisTrue() : thisFalse();
             }
         } else if (amal == '/') {
             misol.innerHTML = '' + result1 + ' '+ amal + ' ' + result2;
             document.getElementById('send').onclick = function(){
-                (javob.value == result1/result2) ? thisTrue() : danger.style.display='block';
+                (javob.value == result1/result2) ? thisTrue() : thisFalse();
             }
         }
     }

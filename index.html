@@ -14,10 +14,15 @@
 </head>
 
 <body>
-  <form action="#">
-    <div class="d-flex justify-content-end text-success"><div>Level <span id="level" class="bold">0</span></div></div>
-    <div class="title">Math Game</div>
-    <label class="d-block mt-3" id="maxrandomL">Random maxsimum nechi raqamini chiqarsin?</label>
+  <form action="#" id="form">
+    <div id="game-over" class="game-over">Game over</div>
+    <div class="main justify-content-between">
+      <div class="text-danger">Error <span id="error" class="bold">0</span></div>
+      <div class="title">Math Game</div>
+      <div class="text-success">Level <span id="level" class="bold">0</span></div>
+    </div>
+    
+    <label class="block mt-3" id="maxrandomL">Random maxsimum nechi raqamini chiqarsin?</label>
     <input type="radio" name="max" class="maxrandom" id="maxrandom" checked><span class="span"><label for="maxrandom">0-10</label></span>
     <input type="radio" name="max" class="maxrandom" id="maxrandom2"><span class="span"><label for="maxrandom2">0-20</label></span>
     <input type="radio" name="max" class="maxrandom" id="maxrandom3"><span class="span"><label for="maxrandom3">0-30</label></span>
@@ -31,12 +36,7 @@
       <label for="selectrandom" class="custom-control-label">Randomni maxsimal raqamini tanlash</label>
     </div>
 
-    <!-- <input id="car" type="text" list="colors" placeholder="Amallar"/>
-    <datalist id="colors">
-      <option value="Red">
-      <option value="Green">
-      <option value="Yellow">
-    </datalist> -->
+    
     <select name="" id="select" class="mt-2">
       <option class="option">+</option>
       <option class="option">-</option>
