@@ -72,4 +72,8 @@ select {
   font-size: 36px;
   text-align: center;
   font-weight: 700;
+  margin-bottom: 10px;
+}
+.span1{
+  color: red;
 }

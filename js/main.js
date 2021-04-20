@@ -3,15 +3,23 @@ let checked_switch = `
 <label for="customRange">Custom range</label>
 <input type="range" class="custom-range" id="customRange" name="points1">
 `;
-
+let span = document.querySelectorAll('.span')
 let selected = 0;
 document.querySelectorAll('.maxrandom').forEach((value, index) => {
     value.onclick = function () {
         if (index == 0) {
             selected = index;
+            span.forEach((value,index) => {
+                value.style.color = 'black';
+            });
+            span[index].style.color = 'red';
         }
         else {
             selected = index;
+            span.forEach((value,index) => {
+                value.style.color = 'black';
+            });
+            span[index].style.color = 'red';
         }
     }
 })
@@ -48,7 +56,8 @@ function main(index) {
     let amal = document.querySelector('select').value;
     let misol = document.getElementById('misol');
     let javobInput = document.getElementById('javobInput');
-    javobInput.innerHTML = `<input type="number" class="form-control" id="javob"> 
+    javobInput.innerHTML = `
+    <input type="number" class="form-control" id="javob" placeholder="Javob"> 
     <button type="button" id="send" class="btn btn-dark btn-block ml-2">Send</button>
     `;
     javobInput.style.display = 'flex';
