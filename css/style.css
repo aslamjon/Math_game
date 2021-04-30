@@ -107,7 +107,7 @@ body #alert {
   top: 3%;
   width: 96%;
   left: 2%;
-  transform: translateY(-200px);
+  transform: translateY(-300px);
   padding-right: 1.9rem !important;
   z-index: 2;
 }

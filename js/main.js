@@ -119,36 +119,24 @@ function main(index) {
             misol.innerHTML = '' + result1 + ' ' + amal + ' ' + result2;
             document.getElementById('send').onclick = function () {
                 (javob.value == result1 + result2) ? thisTrue() : thisFalse();
-                setTimeout(function(){
-                    document.getElementById('btn').removeAttribute('disabled');
-                }, 2000);
             }
         }
         else if (ishora === '-') {
             misol.innerHTML = '' + result1 + ' ' + amal + ' ' + result2;
             document.getElementById('send').onclick = function () {
                 (javob.value == result1 - result2) ? thisTrue() : thisFalse();
-                setTimeout(function(){
-                    document.getElementById('btn').removeAttribute('disabled');
-                }, 2000);
             }
         }
         else if (ishora === '*') {
             misol.innerHTML = '' + result1 + ' ' + amal + ' ' + result2;
             document.getElementById('send').onclick = function () {
                 (javob.value == result1 * result2) ? thisTrue() : thisFalse();
-                setTimeout(function(){
-                    document.getElementById('btn').removeAttribute('disabled');
-                }, 2000);
             }
         }
         else if (ishora === '/') {
             misol.innerHTML = '' + result1 + ' ' + amal + ' ' + result2;
             document.getElementById('send').onclick = function () {
                 (javob.value == result1 / result2) ? thisTrue() : thisFalse();
-                setTimeout(function(){
-                    document.getElementById('btn').removeAttribute('disabled');
-                }, 2000);
             }
         }
         
@@ -272,7 +260,7 @@ let alertt = document.getElementById('alert');
 let close = document.getElementById('close');
 info.onclick = function () {
     if (alertt.style.transform == 'translateY(0px)') {
-        alertt.style.transform = 'translateY(-200px)';
+        alertt.style.transform = 'translateY(-300px)';
         this.style.background = 'rgba(34, 34, 34, 0.534)';
     } else {
         alertt.style.transform = 'translateY(0px)';
@@ -280,6 +268,6 @@ info.onclick = function () {
     }
 }
 close.onclick = function () {
-    alertt.style.transform = 'translateY(-200px)';
+    alertt.style.transform = 'translateY(-300px)';
     info.style.background = 'rgba(34, 34, 34, 0.534)';
 }
