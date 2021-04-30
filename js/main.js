@@ -109,30 +109,61 @@ function main(index) {
             document.getElementById('btn').setAttribute('disabled', 'true');
         }
     }
-
+    function after3secondsBtnDisabled(){
+        setTimeout(function(){
+            document.getElementById('btn').setAttribute('disabled', 'true');
+        }, 3000);
+    }
+    function sendOnClick(result1, result2, amal , ishora){
+        if (ishora === '+') {
+            misol.innerHTML = '' + result1 + ' ' + amal + ' ' + result2;
+            document.getElementById('send').onclick = function () {
+                (javob.value == result1 + result2) ? thisTrue() : thisFalse();
+                setTimeout(function(){
+                    document.getElementById('btn').removeAttribute('disabled');
+                }, 2000);
+            }
+        }
+        else if (ishora === '-') {
+            misol.innerHTML = '' + result1 + ' ' + amal + ' ' + result2;
+            document.getElementById('send').onclick = function () {
+                (javob.value == result1 - result2) ? thisTrue() : thisFalse();
+                setTimeout(function(){
+                    document.getElementById('btn').removeAttribute('disabled');
+                }, 2000);
+            }
+        }
+        else if (ishora === '*') {
+            misol.innerHTML = '' + result1 + ' ' + amal + ' ' + result2;
+            document.getElementById('send').onclick = function () {
+                (javob.value == result1 * result2) ? thisTrue() : thisFalse();
+                setTimeout(function(){
+                    document.getElementById('btn').removeAttribute('disabled');
+                }, 2000);
+            }
+        }
+        else if (ishora === '/') {
+            misol.innerHTML = '' + result1 + ' ' + amal + ' ' + result2;
+            document.getElementById('send').onclick = function () {
+                (javob.value == result1 / result2) ? thisTrue() : thisFalse();
+                setTimeout(function(){
+                    document.getElementById('btn').removeAttribute('disabled');
+                }, 2000);
+            }
+        }
+        
+    }
     if (selected == 0) {
         let result1 = Math.floor(Math.random() * 11);
         let result2 = Math.floor(Math.random() * 11);
         if (amal == '+') {
-            misol.innerHTML = '' + result1 + ' ' + amal + ' ' + result2;
-            document.getElementById('send').onclick = function () {
-                (javob.value == result1 + result2) ? thisTrue() : thisFalse();
-            }
+            sendOnClick(result1, result2, amal, '+');
         } else if (amal == '-') {
-            misol.innerHTML = '' + result1 + ' ' + amal + ' ' + result2;
-            document.getElementById('send').onclick = function () {
-                (javob.value == result1 - result2) ? thisTrue() : thisFalse();
-            }
+            sendOnClick(result1, result2, amal, '-');
         } else if (amal == '*') {
-            misol.innerHTML = '' + result1 + ' ' + amal + ' ' + result2;
-            document.getElementById('send').onclick = function () {
-                (javob.value == result1 * result2) ? thisTrue() : thisFalse();
-            }
+            sendOnClick(result1, result2, amal, '*');
         } else if (amal == '/') {
-            misol.innerHTML = '' + result1 + ' ' + amal + ' ' + result2;
-            document.getElementById('send').onclick = function () {
-                (javob.value == result1 / result2) ? thisTrue() : thisFalse();
-            }
+            sendOnClick(result1, result2, amal, '/');
         }
     }
     else if (selected == 1) {
@@ -140,100 +171,52 @@ function main(index) {
         let result1 = Math.floor(Math.random() * 21);
         let result2 = Math.floor(Math.random() * 21);
         if (amal == '+') {
-            misol.innerHTML = '' + result1 + ' ' + amal + ' ' + result2;
-            document.getElementById('send').onclick = function () {
-                (javob.value == result1 + result2) ? thisTrue() : thisFalse();
-            }
+            sendOnClick(result1, result2, amal, '+');
         } else if (amal == '-') {
-            misol.innerHTML = '' + result1 + ' ' + amal + ' ' + result2;
-            document.getElementById('send').onclick = function () {
-                (javob.value == result1 - result2) ? thisTrue() : thisFalse();
-            }
+            sendOnClick(result1, result2, amal, '-');
         } else if (amal == '*') {
-            misol.innerHTML = '' + result1 + ' ' + amal + ' ' + result2;
-            document.getElementById('send').onclick = function () {
-                (javob.value == result1 * result2) ? thisTrue() : thisFalse();
-            }
+            sendOnClick(result1, result2, amal, '*');
         } else if (amal == '/') {
-            misol.innerHTML = '' + result1 + ' ' + amal + ' ' + result2;
-            document.getElementById('send').onclick = function () {
-                (javob.value == result1 / result2) ? thisTrue() : thisFalse();
-            }
+            sendOnClick(result1, result2, amal, '/');
         }
     }
     else if (selected == 2) {
         let result1 = Math.floor(Math.random() * 31);
         let result2 = Math.floor(Math.random() * 31);
         if (amal == '+') {
-            misol.innerHTML = '' + result1 + ' ' + amal + ' ' + result2;
-            document.getElementById('send').onclick = function () {
-                (javob.value == result1 + result2) ? thisTrue() : thisFalse();
-            }
+            sendOnClick(result1, result2, amal, '+');
         } else if (amal == '-') {
-            misol.innerHTML = '' + result1 + ' ' + amal + ' ' + result2;
-            document.getElementById('send').onclick = function () {
-                (javob.value == result1 - result2) ? thisTrue() : thisFalse();
-            }
+            sendOnClick(result1, result2, amal, '-');
         } else if (amal == '*') {
-            misol.innerHTML = '' + result1 + ' ' + amal + ' ' + result2;
-            document.getElementById('send').onclick = function () {
-                (javob.value == result1 * result2) ? thisTrue() : thisFalse();
-            }
+            sendOnClick(result1, result2, amal, '*');
         } else if (amal == '/') {
-            misol.innerHTML = '' + result1 + ' ' + amal + ' ' + result2;
-            document.getElementById('send').onclick = function () {
-                (javob.value == result1 / result2) ? thisTrue() : thisFalse();
-            }
+            sendOnClick(result1, result2, amal, '/');
         }
     }
     else if (selected == 3) {
         let result1 = Math.floor(Math.random() * 41);
         let result2 = Math.floor(Math.random() * 41);
         if (amal == '+') {
-            misol.innerHTML = '' + result1 + ' ' + amal + ' ' + result2;
-            document.getElementById('send').onclick = function () {
-                (javob.value == result1 + result2) ? thisTrue() : thisFalse();
-            }
+            sendOnClick(result1, result2, amal, '+');
         } else if (amal == '-') {
-            misol.innerHTML = '' + result1 + ' ' + amal + ' ' + result2;
-            document.getElementById('send').onclick = function () {
-                (javob.value == result1 - result2) ? thisTrue() : thisFalse();
-            }
+            sendOnClick(result1, result2, amal, '-');
         } else if (amal == '*') {
-            misol.innerHTML = '' + result1 + ' ' + amal + ' ' + result2;
-            document.getElementById('send').onclick = function () {
-                (javob.value == result1 * result2) ? thisTrue() : thisFalse();
-            }
+            sendOnClick(result1, result2, amal, '*');
         } else if (amal == '/') {
-            misol.innerHTML = '' + result1 + ' ' + amal + ' ' + result2;
-            document.getElementById('send').onclick = function () {
-                (javob.value == result1 / result2) ? thisTrue() : thisFalse();
-            }
+            sendOnClick(result1, result2, amal, '/');
         }
     }
     else if (selected == 4) {
         let result1 = Math.floor(Math.random() * 51);
         let result2 = Math.floor(Math.random() * 51);
         if (amal == '+') {
-            misol.innerHTML = '' + result1 + ' ' + amal + ' ' + result2;
-            document.getElementById('send').onclick = function () {
-                (javob.value == result1 + result2) ? thisTrue() : thisFalse();
-            }
+            sendOnClick(result1, result2, amal, '+');
         } else if (amal == '-') {
-            misol.innerHTML = '' + result1 + ' ' + amal + ' ' + result2;
-            document.getElementById('send').onclick = function () {
-                (javob.value == result1 - result2) ? thisTrue() : thisFalse();
-            }
+            sendOnClick(result1, result2, amal, '-');
         } else if (amal == '*') {
-            misol.innerHTML = '' + result1 + ' ' + amal + ' ' + result2;
-            document.getElementById('send').onclick = function () {
-                (javob.value == result1 * result2) ? thisTrue() : thisFalse();
-            }
+            sendOnClick(result1, result2, amal, '*');
         } else if (amal == '/') {
-            misol.innerHTML = '' + result1 + ' ' + amal + ' ' + result2;
-            document.getElementById('send').onclick = function () {
-                (javob.value == result1 / result2) ? thisTrue() : thisFalse();
-            }
+            sendOnClick(result1, result2, amal, '/');
         }
     }
     else {
@@ -241,27 +224,15 @@ function main(index) {
         let result1 = Math.floor(Math.random() * Number(ifChecked.value));
         let result2 = Math.floor(Math.random() * Number(ifChecked.value));
         if (amal == '+') {
-            misol.innerHTML = '' + result1 + ' ' + amal + ' ' + result2;
-            document.getElementById('send').onclick = function () {
-                (javob.value == result1 + result2) ? thisTrue() : thisFalse();
-            }
+            sendOnClick(result1, result2, amal, '+');
         } else if (amal == '-') {
-            misol.innerHTML = '' + result1 + ' ' + amal + ' ' + result2;
-            document.getElementById('send').onclick = function () {
-                (javob.value == result1 - result2) ? thisTrue() : thisFalse();
-            }
+            sendOnClick(result1, result2, amal, '-');
         } else if (amal == '*') {
-            misol.innerHTML = '' + result1 + ' ' + amal + ' ' + result2;
-            document.getElementById('send').onclick = function () {
-                (javob.value == result1 * result2) ? thisTrue() : thisFalse();
-            }
+            sendOnClick(result1, result2, amal, '*');
         } else if (amal == '/') {
-            misol.innerHTML = '' + result1 + ' ' + amal + ' ' + result2;
-            document.getElementById('send').onclick = function () {
-                (javob.value == result1 / result2) ? thisTrue() : thisFalse();
-            }
+            sendOnClick(result1, result2, amal, '/');
         }
     }
-
+    after3secondsBtnDisabled()
 }
 
