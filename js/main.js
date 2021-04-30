@@ -236,3 +236,29 @@ function main(index) {
     after3secondsBtnDisabled()
 }
 
+// dark and light mode
+let light = document.getElementById('light');
+let dark = document.getElementById('dark');
+light.onclick = () => {
+    document.body.style.transition = '0.3s'
+    document.body.style.background = '#fff';
+    // document.body.style.color = '#000';
+    dark.style.opacity = 1;
+    light.style.opacity = 0;
+    setTimeout(function(){
+        light.style.zIndex = 2;
+        dark.style.zIndex = 3;
+    }, 550);
+    
+}
+dark.onclick = () => {
+    document.body.style.transition = '0.3s'
+    document.body.style.background = '#222222';
+    // document.body.style.color = '#fff';
+    dark.style.opacity = 0;
+    light.style.opacity = 1;
+    setTimeout(function(){
+        light.style.zIndex = 3;
+        dark.style.zIndex = 2;
+    }, 550);
+}
