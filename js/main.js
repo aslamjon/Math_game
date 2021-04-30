@@ -243,6 +243,8 @@ light.onclick = () => {
     document.body.style.transition = '0.3s'
     document.body.style.background = '#fff';
     // document.body.style.color = '#000';
+    document.getElementById('form').style.background = '#222';
+    document.getElementById('form').style.color = '#fff';
     dark.style.opacity = 1;
     light.style.opacity = 0;
     setTimeout(function(){
@@ -255,10 +257,29 @@ dark.onclick = () => {
     document.body.style.transition = '0.3s'
     document.body.style.background = '#222222';
     // document.body.style.color = '#fff';
+    document.getElementById('form').style.background = '#fff';
+    document.getElementById('form').style.color = '#000';
     dark.style.opacity = 0;
     light.style.opacity = 1;
     setTimeout(function(){
         light.style.zIndex = 3;
         dark.style.zIndex = 2;
     }, 550);
+}
+// info img
+let info = document.getElementById('info');
+let alertt = document.getElementById('alert');
+let close = document.getElementById('close');
+info.onclick = function () {
+    if (alertt.style.transform == 'translateY(0px)') {
+        alertt.style.transform = 'translateY(-200px)';
+        this.style.background = 'rgba(34, 34, 34, 0.534)';
+    } else {
+        alertt.style.transform = 'translateY(0px)';
+        this.style.background = '#000';
+    }
+}
+close.onclick = function () {
+    alertt.style.transform = 'translateY(-200px)';
+    info.style.background = 'rgba(34, 34, 34, 0.534)';
 }
