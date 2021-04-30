@@ -49,18 +49,21 @@ checkbox.onclick = function () {
         ifChecked.style.display = 'none';
     }
 }
-document.getElementById('btn').addEventListener('click', function () {
+document.getElementById('btn').onclick = function () {
     main(selected);
-})
+    this.style.width = '48%';
+}
 function main(index) {
+    console.log('work');
     let amal = document.querySelector('select').value;
     let misol = document.getElementById('misol');
+    let javobI = document.getElementById('javobI');
+    javobI.innerHTML = '<input type="number" class="form-control" id="javob" placeholder="Javob"> ';
     let javobInput = document.getElementById('javobInput');
     javobInput.innerHTML = `
-    <input type="number" class="form-control" id="javob" placeholder="Javob"> 
-    <button type="button" id="send" class="btn btn-dark btn-block ml-2">Send</button>
+    <button type="button" id="send" class="btn btn-dark btn-block ml-1">Send</button>
     `;
-    javobInput.style.display = 'flex';
+    javobInput.style.width = '48%';
     let javob = document.getElementById('javob');
     let massage = document.getElementById('massage');
     let success = document.getElementById('p1');
@@ -86,6 +89,9 @@ function main(index) {
         level.innerHTML = levelNum;
         send.setAttribute('disabled', 'true');
         document.getElementById('btn').removeAttribute('disabled');
+        setTimeout(function (){
+            document.getElementById('btn').click();
+        }, 5000);
     }
     function thisFalse() {
         if ((errorNum - 9) == levelNum) {
@@ -109,32 +115,28 @@ function main(index) {
             document.getElementById('btn').setAttribute('disabled', 'true');
         }
     }
-    function after3secondsBtnDisabled(){
-        setTimeout(function(){
-            document.getElementById('btn').setAttribute('disabled', 'true');
-        }, 3000);
-    }
+    
     function sendOnClick(result1, result2, amal , ishora){
         if (ishora === '+') {
-            misol.innerHTML = '' + result1 + ' ' + amal + ' ' + result2;
+            misol.innerHTML = '' + result1 + ' ' + amal + ' ' + result2 + ' = ';
             document.getElementById('send').onclick = function () {
                 (javob.value == result1 + result2) ? thisTrue() : thisFalse();
             }
         }
         else if (ishora === '-') {
-            misol.innerHTML = '' + result1 + ' ' + amal + ' ' + result2;
+            misol.innerHTML = '' + result1 + ' ' + amal + ' ' + result2 + ' = ';
             document.getElementById('send').onclick = function () {
                 (javob.value == result1 - result2) ? thisTrue() : thisFalse();
             }
         }
         else if (ishora === '*') {
-            misol.innerHTML = '' + result1 + ' ' + amal + ' ' + result2;
+            misol.innerHTML = '' + result1 + ' ' + amal + ' ' + result2 + ' = ';
             document.getElementById('send').onclick = function () {
                 (javob.value == result1 * result2) ? thisTrue() : thisFalse();
             }
         }
         else if (ishora === '/') {
-            misol.innerHTML = '' + result1 + ' ' + amal + ' ' + result2;
+            misol.innerHTML = '' + result1 + ' ' + amal + ' ' + result2 + ' = ';
             document.getElementById('send').onclick = function () {
                 (javob.value == result1 / result2) ? thisTrue() : thisFalse();
             }
@@ -155,7 +157,6 @@ function main(index) {
         }
     }
     else if (selected == 1) {
-        console.log(Math.floor(Math.random() * 21));
         let result1 = Math.floor(Math.random() * 21);
         let result2 = Math.floor(Math.random() * 21);
         if (amal == '+') {
@@ -221,7 +222,10 @@ function main(index) {
             sendOnClick(result1, result2, amal, '/');
         }
     }
-    after3secondsBtnDisabled()
+    
+    setTimeout(function after3secondsBtnDisabled(){
+        document.getElementById('btn').setAttribute('disabled', 'true');
+    }, 1500);
 }
 
 // dark and light mode
@@ -260,7 +264,7 @@ let alertt = document.getElementById('alert');
 let close = document.getElementById('close');
 info.onclick = function () {
     if (alertt.style.transform == 'translateY(0px)') {
-        alertt.style.transform = 'translateY(-300px)';
+        alertt.style.transform = 'translateY(-400px)';
         this.style.background = 'rgba(34, 34, 34, 0.534)';
     } else {
         alertt.style.transform = 'translateY(0px)';
@@ -268,6 +272,6 @@ info.onclick = function () {
     }
 }
 close.onclick = function () {
-    alertt.style.transform = 'translateY(-300px)';
+    alertt.style.transform = 'translateY(-400px)';
     info.style.background = 'rgba(34, 34, 34, 0.534)';
 }

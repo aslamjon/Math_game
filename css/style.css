@@ -77,11 +77,28 @@ body form .main {
 body form .block {
   display: block;
 }
-body form #misol {
+body form #misolMain {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+body form #misolMain #misol {
   font-size: 36px;
-  text-align: center;
+  text-align: end;
   font-weight: 700;
   margin-bottom: 10px;
+  width: 48%;
+  margin-right: 1%;
+}
+body form #misolMain #javobI {
+  width: 50%;
+}
+body form #misolMain #javobI #javob {
+  border: none !important;
+}
+body form #twoBtn {
+  display: flex;
+  justify-content: space-between;
 }
 body form .span1 {
   color: red;
@@ -102,12 +119,12 @@ body #info {
   transition: 0.3s;
 }
 body #alert {
-  transition: 0.4s;
+  transition: 0.5s;
   position: absolute;
   top: 3%;
   width: 96%;
   left: 2%;
-  transform: translateY(-310px);
+  transform: translateY(-400px);
   padding-right: 1.9rem !important;
   z-index: 2;
 }

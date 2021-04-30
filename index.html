@@ -46,17 +46,21 @@
     <label for="select">Matemetik ishorani tanlang</label>
 
     <div class="">
-      <div id="misol"></div>
-      <div id="javobInput"></div>
+      <div id="misolMain">
+        <div id="misol"></div>
+        <div id="javobI"></div>
+      </div>
+      <div id="twoBtn">
+        <button type="button" id="btn" class="btn btn-outline-dark btn-block">Start</button>
+        <div id="javobInput"></div>
+      </div>
+    </div>
+  
+    <div class="d-flex justify-content-between align-items-center mt-2 mb-n1">
       <div id="massage">
         <p id="p1" class="text-success bold">To'g'ri</p>
         <p id="p2" class="text-danger bold">To'g'ri emas</p>
-      </div>  
-    </div>
-    
-    <button type="button" id="btn" class="btn btn-outline-dark btn-block mt-3">Start</button>
-    
-    <div class="d-flex justify-content-end mt-2 mb-n1">
+      </div> 
       <div id="info" class="icon"></div>
     </div>
 
@@ -65,9 +69,9 @@
       juda foydali chunki dastur o'yin yordamida matematika bilimingizni yanada kuchaytiradi.
       
       <b>Dasturning ishlashi haqida :</b>
-      Start tugmasi bosilganda 3 secunddan keyin tugma o'chadi. 
+      Start tugmasi bosilganda 2 secunddan keyin tugma o'chadi. 
       Qachonki to'g'ri javob kiritilsa tugma yonadi va o'yini 
-      davom etirishingiz mumkin bo'ladi.
+      davom etirishingiz mumkin bo'ladi. Agar to'g'ri javob chiqgandan keyin Start bosilmasa 5 secunddan keyin yana o'yin navom etiladi
       <br>
       Created by <strong>Aslamjon Ibragimov</strong>
       <button type="button" class="close" id="close">&times;</button>
