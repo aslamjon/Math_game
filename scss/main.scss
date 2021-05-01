@@ -4,9 +4,6 @@
 }
 body {
     background: #222222;
-    /* display: flex;
-  justify-content: center;
-  align-items: center; */
     form {
         width: 450px;
         background: white;
@@ -16,12 +13,11 @@ body {
         overflow: hidden;
         border-radius: 5px;
         box-shadow: 0 0 8px rgb(170, 170, 170);
+        transition: 0.4s;
         .title {
             font-size: 24px;
             font-weight: 700;
             text-align: center;
-            /* margin: 10px auto;
-        margin-top: -20px; */
             margin-top: 23px;
         }
         input[type="radio"] {
@@ -94,7 +90,9 @@ body {
                     border: none;
                     font-size: 24px;
                     font-weight: 700;
-                    padding: 0 0.75rem 5px 0.75rem;
+                    padding: 0 0.75rem;
+                    margin-bottom: 5px;
+                    transition: 0.4s;
                 }
             }
         }
@@ -190,3 +188,16 @@ body {
     }
 }
 
+@media (max-width: 370px) {
+    body {
+        #alert{
+            padding-right: 1.4rem !important;
+            &::first-line {
+                padding-right: 1.9rem !important;
+            }
+            button {
+                padding: 0.75rem;
+            }
+        }
+    }
+}

@@ -54,7 +54,6 @@ document.getElementById('btn').onclick = function () {
     this.style.width = '48%';
 }
 function main(index) {
-    console.log('work');
     let amal = document.querySelector('select').value;
     let misol = document.getElementById('misol');
     let javobI = document.getElementById('javobI');
@@ -226,31 +225,50 @@ function main(index) {
     setTimeout(function after3secondsBtnDisabled(){
         document.getElementById('btn').setAttribute('disabled', 'true');
     }, 1500);
+
+    let formm = document.querySelector('form'); 
+    if (formm.style.color === 'rgb(255, 255, 255)') {
+        javob.style.background = '#222';
+        javob.style.color = '#fff';
+    }
 }
 
 // dark and light mode
 let light = document.getElementById('light');
 let dark = document.getElementById('dark');
+
+
 light.onclick = () => {
+    let javob = document.getElementById('javob');
     document.body.style.transition = '0.3s'
     document.body.style.background = '#fff';
     // document.body.style.color = '#000';
     document.getElementById('form').style.background = '#222';
     document.getElementById('form').style.color = '#fff';
+    if (javob !== null){
+        javob.style.background = '#222';
+        javob.style.color = '#fff';
+    }
+    
     dark.style.opacity = 1;
     light.style.opacity = 0;
     setTimeout(function(){
         light.style.zIndex = 2;
         dark.style.zIndex = 3;
     }, 550);
-    
 }
 dark.onclick = () => {
+    let javob = document.getElementById('javob');
     document.body.style.transition = '0.3s'
     document.body.style.background = '#222222';
     // document.body.style.color = '#fff';
     document.getElementById('form').style.background = '#fff';
     document.getElementById('form').style.color = '#000';
+    if (javob !== null){
+        javob.style.background = '#fff';
+        javob.style.color = '#222';
+    }
+    
     dark.style.opacity = 0;
     light.style.opacity = 1;
     setTimeout(function(){
@@ -261,17 +279,25 @@ dark.onclick = () => {
 // info img
 let info = document.getElementById('info');
 let alertt = document.getElementById('alert');
-let close = document.getElementById('close');
+let closee = document.getElementById('close');
+let formm = document.querySelector('form'); 
 info.onclick = function () {
     if (alertt.style.transform == 'translateY(0px)') {
         alertt.style.transform = 'translateY(-400px)';
         this.style.background = 'rgba(34, 34, 34, 0.534)';
+        formm.style.height = '100%';
     } else {
         alertt.style.transform = 'translateY(0px)';
         this.style.background = '#000';
+        if (window.innerWidth <= 355) 
+            formm.style.height = '400px';
+        else if (window.innerWidth <= 417) 
+            formm.style.height = '335px';
+        
     }
 }
-close.onclick = function () {
+closee.onclick = function () {
     alertt.style.transform = 'translateY(-400px)';
     info.style.background = 'rgba(34, 34, 34, 0.534)';
+    formm.style.height = '100%';
 }

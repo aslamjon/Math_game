@@ -3,10 +3,7 @@
   margin: 0; }
 
 body {
-  background: #222222;
-  /* display: flex;
-justify-content: center;
-align-items: center; */ }
+  background: #222222; }
   body form {
     width: 450px;
     background: white;
@@ -15,13 +12,12 @@ align-items: center; */ }
     position: relative;
     overflow: hidden;
     border-radius: 5px;
-    box-shadow: 0 0 8px #aaaaaa; }
+    box-shadow: 0 0 8px #aaaaaa;
+    transition: 0.4s; }
     body form .title {
       font-size: 24px;
       font-weight: 700;
       text-align: center;
-    /* margin: 10px auto;
-margin-top: -20px; */
       margin-top: 23px; }
     body form input[type="radio"] {
       margin-right: 5px; }
@@ -80,7 +76,9 @@ margin-top: -20px; */
           border: none;
           font-size: 24px;
           font-weight: 700;
-          padding: 0 0.75rem 5px 0.75rem; }
+          padding: 0 0.75rem;
+          margin-bottom: 5px;
+          transition: 0.4s; }
     body form #twoBtn {
       display: flex;
       justify-content: space-between; }
@@ -147,5 +145,12 @@ margin-top: -20px; */
   body #dark {
     top: 15px;
     right: 15px; } }
+@media (max-width: 370px) {
+  body #alert {
+    padding-right: 1.4rem !important; }
+    body #alert::first-line {
+      padding-right: 1.9rem !important; }
+    body #alert button {
+      padding: 0.75rem; } }
 
 /*# sourceMappingURL=style.css.map */
