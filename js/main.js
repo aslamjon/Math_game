@@ -236,7 +236,7 @@ function main(index) {
 // dark and light mode
 let light = document.getElementById('light');
 let dark = document.getElementById('dark');
-
+let info = document.getElementById('info');
 
 light.onclick = () => {
     let javob = document.getElementById('javob');
@@ -249,6 +249,7 @@ light.onclick = () => {
         javob.style.background = '#222';
         javob.style.color = '#fff';
     }
+    info.style.background = 'rgb(156, 156, 156)';
     
     dark.style.opacity = 1;
     light.style.opacity = 0;
@@ -268,7 +269,9 @@ dark.onclick = () => {
         javob.style.background = '#fff';
         javob.style.color = '#222';
     }
+    info.style.background = 'rgba(34, 34, 34, 0.534)';
     
+
     dark.style.opacity = 0;
     light.style.opacity = 1;
     setTimeout(function(){
@@ -277,18 +280,27 @@ dark.onclick = () => {
     }, 550);
 }
 // info img
-let info = document.getElementById('info');
+
 let alertt = document.getElementById('alert');
 let closee = document.getElementById('close');
 let formm = document.querySelector('form'); 
 info.onclick = function () {
+    // go up
     if (alertt.style.transform == 'translateY(0px)') {
         alertt.style.transform = 'translateY(-400px)';
-        this.style.background = 'rgba(34, 34, 34, 0.534)';
+
+        if (formm.style.background === 'rgb(34, 34, 34)') 
+            info.style.background = 'rgb(156, 156, 156)';
+        else info.style.background = 'rgba(34, 34, 34, 0.534)';
+
         formm.style.height = '100%';
-    } else {
+    } else { // go down
         alertt.style.transform = 'translateY(0px)';
-        this.style.background = '#000';
+        
+        if (formm.style.background === 'rgb(34, 34, 34)') 
+            info.style.background = 'rgba(255,255,255)';
+        else info.style.background = '#000';
+
         if (window.innerWidth <= 355) 
             formm.style.height = '400px';
         else if (window.innerWidth <= 417) 
@@ -298,6 +310,41 @@ info.onclick = function () {
 }
 closee.onclick = function () {
     alertt.style.transform = 'translateY(-400px)';
-    info.style.background = 'rgba(34, 34, 34, 0.534)';
+    if (formm.style.background === 'rgb(34, 34, 34)')
+        info.style.background = 'rgb(156, 156, 156)';
+    else info.style.background = 'rgba(34, 34, 34, 0.534)';
     formm.style.height = '100%';
+}
+// info.onmouseover = function() {
+//     if (formm.style.background === 'rgb(34, 34, 34)') // dark
+//         this.style.background = 'rgba(255,255,255)';
+//     else this.style.background = 'rgba(34, 34, 34, 0.836)'; // light
+// }
+// info.onmouseout = function() {
+//     if (formm.style.background === 'rgb(34, 34, 34)') // dark
+//         this.style.background = 'rgb(189, 189, 189)';
+//     else this.style.background = 'rgba(34, 34, 34, 0.534)'; // light
+// }
+
+info.onmouseover = function() {
+    if (formm.style.background === 'rgb(34, 34, 34)'){ // dark
+        info.classList.remove('hoverForLight');
+        info.classList.add('hoverForDark');
+    }
+        
+    else {// light
+        info.classList.remove('hoverForDark');
+        info.classList.add('hoverForLight');
+    } 
+}
+info.onmouseout = function() {
+    if (formm.style.background === 'rgb(34, 34, 34)') {// dark
+        info.classList.remove('hoverForDark');
+        info.classList.remove('hoverForLight');
+    }
+        
+    else {// light
+        info.classList.remove('hoverForDark');
+        info.classList.remove('hoverForLight');
+    } 
 }

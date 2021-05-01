@@ -97,6 +97,12 @@ body {
     -webkit-mask-image: url("../img/information.svg");
     background: rgba(34, 34, 34, 0.534);
     transition: 0.3s; }
+    body #info:hover {
+      background: rgba(34, 34, 34, 0.836); }
+  body .hoverForDark {
+    background: #e2e2e2 !important; }
+  body .hoverForLight {
+    background: rgba(34, 34, 34, 0.836) !important; }
   body #alert {
     transition: 0.5s;
     position: absolute;
