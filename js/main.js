@@ -90,7 +90,7 @@ function main(index) {
         document.getElementById('btn').removeAttribute('disabled');
         setTimeout(function (){
             document.getElementById('btn').click();
-        }, 5000);
+        }, 3000);
     }
     function thisFalse() {
         if ((errorNum - 9) == levelNum) {
@@ -142,6 +142,14 @@ function main(index) {
         }
         
     }
+    function checkForDividedNumbers(result1, result2) {
+        if (result1 < result2 || result2 === 0 || String(result1 / result2).includes('.')) {
+            console.log(`False Numbers ${result1} / ${result2}`);
+            main();
+        } else {
+            sendOnClick(result1, result2, amal, '/');
+        }
+    }
     if (selected == 0) {
         let result1 = Math.floor(Math.random() * 11);
         let result2 = Math.floor(Math.random() * 11);
@@ -152,7 +160,7 @@ function main(index) {
         } else if (amal == '*') {
             sendOnClick(result1, result2, amal, '*');
         } else if (amal == '/') {
-            sendOnClick(result1, result2, amal, '/');
+            checkForDividedNumbers(result1, result2);
         }
     }
     else if (selected == 1) {
@@ -165,7 +173,7 @@ function main(index) {
         } else if (amal == '*') {
             sendOnClick(result1, result2, amal, '*');
         } else if (amal == '/') {
-            sendOnClick(result1, result2, amal, '/');
+            checkForDividedNumbers(result1, result2);
         }
     }
     else if (selected == 2) {
@@ -178,7 +186,7 @@ function main(index) {
         } else if (amal == '*') {
             sendOnClick(result1, result2, amal, '*');
         } else if (amal == '/') {
-            sendOnClick(result1, result2, amal, '/');
+            checkForDividedNumbers(result1, result2);
         }
     }
     else if (selected == 3) {
@@ -191,7 +199,7 @@ function main(index) {
         } else if (amal == '*') {
             sendOnClick(result1, result2, amal, '*');
         } else if (amal == '/') {
-            sendOnClick(result1, result2, amal, '/');
+            checkForDividedNumbers(result1, result2);
         }
     }
     else if (selected == 4) {
@@ -204,7 +212,7 @@ function main(index) {
         } else if (amal == '*') {
             sendOnClick(result1, result2, amal, '*');
         } else if (amal == '/') {
-            sendOnClick(result1, result2, amal, '/');
+            checkForDividedNumbers(result1, result2);
         }
     }
     else {
@@ -218,7 +226,7 @@ function main(index) {
         } else if (amal == '*') {
             sendOnClick(result1, result2, amal, '*');
         } else if (amal == '/') {
-            sendOnClick(result1, result2, amal, '/');
+            checkForDividedNumbers(result1, result2);
         }
     }
     
@@ -315,16 +323,6 @@ closee.onclick = function () {
     else info.style.background = 'rgba(34, 34, 34, 0.534)';
     formm.style.height = '100%';
 }
-// info.onmouseover = function() {
-//     if (formm.style.background === 'rgb(34, 34, 34)') // dark
-//         this.style.background = 'rgba(255,255,255)';
-//     else this.style.background = 'rgba(34, 34, 34, 0.836)'; // light
-// }
-// info.onmouseout = function() {
-//     if (formm.style.background === 'rgb(34, 34, 34)') // dark
-//         this.style.background = 'rgb(189, 189, 189)';
-//     else this.style.background = 'rgba(34, 34, 34, 0.534)'; // light
-// }
 
 info.onmouseover = function() {
     if (formm.style.background === 'rgb(34, 34, 34)'){ // dark
