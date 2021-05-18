@@ -49,7 +49,10 @@ checkbox.onclick = function () {
         ifChecked.style.display = 'none';
     }
 }
+let myTimeout;
+let startDisabled;
 document.getElementById('btn').onclick = function () {
+    clearTimeout(myTimeout);
     main(selected);
     this.style.width = '48%';
 }
@@ -88,7 +91,8 @@ function main(index) {
         level.innerHTML = levelNum;
         send.setAttribute('disabled', 'true');
         document.getElementById('btn').removeAttribute('disabled');
-        setTimeout(function (){
+        clearTimeout(startDisabled);
+        myTimeout = setTimeout(function (){
             document.getElementById('btn').click();
         }, 3000);
     }
@@ -230,7 +234,7 @@ function main(index) {
         }
     }
     
-    setTimeout(function after3secondsBtnDisabled(){
+    startDisabled = setTimeout(function after3secondsBtnDisabled(){
         document.getElementById('btn').setAttribute('disabled', 'true');
     }, 1500);
 
