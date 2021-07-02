@@ -350,3 +350,32 @@ info.onmouseout = function() {
         info.classList.remove('hoverForLight');
     } 
 }
+
+maxoutput.value = 10;
+function rand() {
+    let rando = Math.floor(Math.random() * (Number(maxoutput.value)+1));
+    return rando;
+}
+maxoutputBtn.onclick = function maxoutputF () {
+    if (maxoutput.value !== '' || Number(maxoutput.value) > 0) {
+        let r = rand();
+        if (maxoutputDisplay.innerHTML == r || r == undefined || r == 0) maxoutputF();
+        else {
+            maxoutputDisplay.innerHTML = r;
+            console.log(r);
+        }
+    } 
+    else {
+        maxoutputDisplay.innerHTML = 'Please, Enter number and try again';
+    }
+}
+
+openRandom.onclick = function() {
+    if (alertRandom.style.transform == 'translateY(0px)') 
+        alertRandom.style.transform = 'translateY(-400px)';
+
+    else alertRandom.style.transform = 'translateY(0px)';
+}
+close2.onclick = () => {
+    alertRandom.style.transform = 'translateY(-400px)';
+}

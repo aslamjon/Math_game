@@ -143,6 +143,25 @@ body {
             outline: none;
         }
     }
+    #alertRandom {
+        #maxoutputDisplay{
+            width: 50%;
+        }
+        #maxoutputBtn{
+            margin-right: 30%;
+        }
+        transition: 0.5s;
+        position: absolute;
+        top: 3%;
+        width: 96%;
+        left: 2%;
+        transform: translateY(-400px);
+        z-index: 2;
+        button {
+            border: none;
+            outline: none;
+        }
+    }
     #light,
     #dark {
         width: 50px;
