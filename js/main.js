@@ -243,6 +243,7 @@ function main(index) {
         javob.style.background = '#222';
         javob.style.color = '#fff';
     }
+	javob.focus();
 }
 
 // dark and light mode
